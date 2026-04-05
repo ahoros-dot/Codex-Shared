@@ -1,56 +1,71 @@
-# Project Name
+# Codex Shared
 
-Short description of what this project does.
+This repository is organized as a small monorepo:
 
-## Status
+- `apps/`: user-facing applications
+- `services/`: backend services and future Python components
+- `contracts/`: shared API and schema definitions
+- `docs/`: project documentation
+- `scripts/`: repository-level helper scripts
 
-This repository has been initialized and is ready for project-specific setup.
+Right now the active app is a minimal `Node.js + TypeScript` starter in `apps/web`.
+
+## Current Structure
+
+```text
+codex-shared/
+  apps/
+    web/
+      .env.example
+      package.json
+      tsconfig.json
+      src/
+  contracts/
+  docs/
+  scripts/
+  services/
+```
 
 ## Getting Started
 
-1. Choose the stack for this project.
-2. Add the runtime and package manager instructions below.
-3. Copy `.env.example` to `.env` and fill in the required values.
-
-## Common Commands
-
-Replace these placeholders once the stack is chosen.
-
-```sh
-# install dependencies
-<install-command>
-
-# start local development
-<dev-command>
-
-# run tests
-<test-command>
-```
-
-## Environment Variables
-
-Create a local `.env` file from `.env.example`.
-
-```sh
-cp .env.example .env
-```
-
-On Windows PowerShell you can also run:
+Use the Node app from `apps/web`.
 
 ```powershell
+Set-Location apps/web
+npm.cmd install
 Copy-Item .env.example .env
+npm.cmd run dev
 ```
+
+If PowerShell blocks `npm`, continue using `npm.cmd`.
+
+## Web App Commands
+
+Run these from `apps/web`.
+
+- `npm run dev`: start the app in watch mode
+- `npm run build`: compile TypeScript into `dist/`
+- `npm run start`: run the compiled output
+- `npm run typecheck`: run the TypeScript checker
+- `npm test`: run the sample test
+
+## Adding Python Later
+
+When you add Python, the recommended path is:
+
+```text
+services/
+  api/
+    pyproject.toml
+    app/
+    tests/
+```
+
+That keeps `Node.js` in `apps/web` and `Python` services in `services/`, so each stack keeps its own dependencies and tooling.
 
 ## Development Rules
 
 - Do not commit secrets.
 - Keep changes small and focused.
-- Run lint and tests before merging.
+- Run checks before merging.
 - Prefer feature branches over direct commits to `main`.
-
-## Next Setup Tasks
-
-- Pick the project stack.
-- Add the actual start, test, and build commands.
-- Create the first feature branch.
-- Make the initial commit.
