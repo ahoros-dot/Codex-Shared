@@ -2,8 +2,6 @@
 
 Project-level documentation lives here.
 
-Examples:
+Available guides:
 
-- architecture notes
-- setup guides
-- feature plans
+- `new-project-manual-ja.md`: Japanese step-by-step manual for starting a new project and growing it over time
