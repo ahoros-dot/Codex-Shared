@@ -13,5 +13,10 @@ npm.cmd run dev
 ## Files
 
 - `src/index.ts`: app entry point
-- `src/server.ts`: minimal HTTP server
-- `src/server.test.ts`: sample test
+- `src/server.ts`: top page and API scaffold
+- `src/server.test.ts`: sample route tests
+
+## Starter Routes
+
+- `/`: starter landing page
+- `/api/health`: sample JSON API for health checks
